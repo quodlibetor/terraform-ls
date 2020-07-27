@@ -214,7 +214,7 @@ func testDocument(t *testing.T, dh DocumentHandler, meta *documentMetadata, b []
 
 	return &document{
 		meta: meta,
-		fo:   fs,
+		fs:   fs,
 	}
 }
 
