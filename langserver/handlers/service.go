@@ -161,6 +161,7 @@ func (svc *service) Assigner() (jrpc2.Assigner, error) {
 				return nil, err
 			}
 			ctx = lsctx.WithDocumentStorage(ctx, fs)
+			ctx = lsctx.WithRootModuleCandidateFinder(ctx, svc.modMgr)
 			return handle(ctx, req, TextDocumentDidChange)
 		},
 		"textDocument/didOpen": func(ctx context.Context, req *jrpc2.Request) (interface{}, error) {

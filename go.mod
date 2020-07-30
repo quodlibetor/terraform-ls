@@ -11,6 +11,7 @@ require (
 	github.com/hashicorp/go-multierror v1.1.0
 	github.com/hashicorp/go-version v1.2.0
 	github.com/hashicorp/hcl/v2 v2.5.2-0.20200528183353-fa7c453538de
+	github.com/hashicorp/terraform-config-inspect v0.0.0-20200526195750-d43f12b82861
 	github.com/hashicorp/terraform-json v0.5.0
 	github.com/hashicorp/terraform-svchost v0.0.0-20191119180714-d2e4933b9136
 	github.com/kylelemons/godebug v1.1.0 // indirect

@@ -68,6 +68,7 @@ type RootModule interface {
 	IsKnownModuleManifestFile(path string) bool
 	PathsToWatch() []string
 	UpdateSchemaCache(ctx context.Context, lockFile File) error
+	ParseProviderReferences() error
 	IsSchemaLoaded() bool
 	UpdateModuleManifest(manifestFile File) error
 	Parser() (lang.Parser, error)
