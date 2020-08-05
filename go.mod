@@ -3,6 +3,7 @@ module github.com/hashicorp/terraform-ls
 go 1.13
 
 require (
+	github.com/agext/levenshtein v1.2.2 // indirect
 	github.com/apparentlymart/go-textseg v1.0.0
 	github.com/creachadair/jrpc2 v0.8.1
 	github.com/fsnotify/fsnotify v1.4.9
@@ -12,9 +13,11 @@ require (
 	github.com/hashicorp/hcl/v2 v2.5.2-0.20200528183353-fa7c453538de
 	github.com/hashicorp/terraform-json v0.5.0
 	github.com/hashicorp/terraform-svchost v0.0.0-20191119180714-d2e4933b9136
+	github.com/kylelemons/godebug v1.1.0 // indirect
 	github.com/mh-cbon/go-fmt-fail v0.0.0-20160815164508-67765b3fbcb5
 	github.com/mitchellh/cli v1.0.0
 	github.com/mitchellh/go-homedir v1.1.0
+	github.com/mitchellh/go-wordwrap v1.0.0 // indirect
 	github.com/mitchellh/mapstructure v1.3.2
 	github.com/pmezard/go-difflib v1.0.0
 	github.com/sourcegraph/go-lsp v0.0.0-20200117082640-b19bb38222e2
