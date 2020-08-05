@@ -5,6 +5,7 @@ import (
 	"log"
 	"time"
 
+	"github.com/hashicorp/terraform-config-inspect/tfconfig"
 	"github.com/hashicorp/terraform-ls/internal/terraform/exec"
 	"github.com/hashicorp/terraform-ls/internal/terraform/lang"
 )
@@ -80,6 +81,6 @@ type RootModule interface {
 
 type RootModuleFactory func(context.Context, string) (*rootModule, error)
 
-type RootModuleManagerFactory func() RootModuleManager
+type RootModuleManagerFactory func(tfconfig.FS) RootModuleManager
 
 type WalkerFactory func() *Walker

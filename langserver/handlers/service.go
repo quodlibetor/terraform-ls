@@ -70,7 +70,7 @@ func (svc *service) Assigner() (jrpc2.Assigner, error) {
 	lh := LogHandler(svc.logger)
 	cc := &lsp.ClientCapabilities{}
 
-	svc.modMgr = svc.newRootModuleManager()
+	svc.modMgr = svc.newRootModuleManager(fs)
 	svc.modMgr.SetLogger(svc.logger)
 
 	svc.walker = svc.newWalker()

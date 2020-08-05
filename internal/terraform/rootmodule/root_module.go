@@ -66,13 +66,15 @@ type rootModule struct {
 	parser       lang.Parser
 
 	// provider references
+	filesystem     tfconfig.FS
 	providerRefs   addrs.ProviderReferences
 	providerRefsMu *sync.RWMutex
 }
 
-func newRootModule(dir string) *rootModule {
+func newRootModule(fs tfconfig.FS, dir string) *rootModule {
 	return &rootModule{
 		path:           dir,
+		filesystem:     fs,
 		logger:         defaultLogger,
 		providerRefs:   make(addrs.ProviderReferences, 0),
 		providerRefsMu: &sync.RWMutex{},
@@ -88,8 +90,8 @@ func newRootModule(dir string) *rootModule {
 
 var defaultLogger = log.New(ioutil.Discard, "", 0)
 
-func NewRootModule(ctx context.Context, dir string) (RootModule, error) {
-	rm := newRootModule(dir)
+func NewRootModule(ctx context.Context, fs tfconfig.FS, dir string) (RootModule, error) {
+	rm := newRootModule(fs, dir)
 
 	d := &discovery.Discovery{}
 	rm.tfDiscoFunc = d.LookPath
